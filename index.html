@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Silbot</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+</head>
+<body ng-app="silbot" ng-cloak>
+    <div layout="column" layout-fill ng-controller="MainController as ctr">
+        <md-toolbar layout layout-align="center center">
+            <h1>Silbot</h1>
+        </md-toolbar>
+        <md-grid-list
+                md-cols-xs="2" md-cols-sm="3" md-cols-md="4" md-cols-gt-md="5"
+                md-row-height="1:1"
+                md-gutter="12px" md-gutter-gt-sm="8px">
+            <md-grid-tile ng-repeat="sound in ctr.sounds"
+                          md-colspan-sm="1">
+                <md-button class="md-accent md-raised" ng-click="sound.audio.play()">Play</md-button>
+                <md-grid-tile-footer>
+                    <h3>{{sound.title}}</h3>
+                </md-grid-tile-footer>
+            </md-grid-tile>
+        </md-grid-list>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+    <script src="https://rawgit.com/danielstern/ngAudio/master/app/angular.audio.js"></script>
+    <script type="text/javascript">
+        angular.module('silbot', ['ngMaterial', 'ngAudio'])
+        .config(function($mdThemingProvider){
+            $mdThemingProvider.theme('default')
+                .primaryPalette('light-green')
+                .accentPalette('blue');
+        })
+        .controller('MainController', function ($http, $interval, ngAudio) {
+            var self = this;
+            self.sounds = [
+                { audio: ngAudio.load('audios/sape.aac'), title: "Sape!" },
+                { audio: ngAudio.load('https://danielstern.github.io/ngAudio/audio/button-2.mp3'), title: "Alto Yao" },
+                { audio: ngAudio.load('https://danielstern.github.io/ngAudio/audio/button-3.mp3'), title: "Williieee" },
+                { audio: ngAudio.load('https://danielstern.github.io/ngAudio/audio/button-4.mp3'), title: "Sapenstein" },
+                { audio: ngAudio.load('https://danielstern.github.io/ngAudio/audio/button-4.mp3'), title: "Sapenhaus" },
+                { audio: ngAudio.load('https://danielstern.github.io/ngAudio/audio/button-4.mp3'), title: "Vos dale para adelante" },
+                { audio: ngAudio.load('https://danielstern.github.io/ngAudio/audio/button-4.mp3'), title: "Fumate un careta" },
+                { audio: ngAudio.load('https://danielstern.github.io/ngAudio/audio/button-4.mp3'), title: "Miralo a Bayardito" },
+                { audio: ngAudio.load('https://danielstern.github.io/ngAudio/audio/button-4.mp3'), title: "Con mi pingo se ahoga" },
+                { audio: ngAudio.load('https://danielstern.github.io/ngAudio/audio/button-4.mp3'), title: "Te la vas a tener que tragar" },
+                { audio: ngAudio.load('https://danielstern.github.io/ngAudio/audio/button-4.mp3'), title: "Colate un dedo cabezona" },
+                { audio: ngAudio.load('https://danielstern.github.io/ngAudio/audio/button-4.mp3'), title: "Pero más bien, loquita" },
+                { audio: ngAudio.load('https://danielstern.github.io/ngAudio/audio/button-4.mp3'), title: "Paga John" },
+                { audio: ngAudio.load('https://danielstern.github.io/ngAudio/audio/button-4.mp3'), title: "De la gorra" },
+                { audio: ngAudio.load('audios/ponelo-aca.aac'), title: "Ponelo acááááá" },
+                { audio: ngAudio.load('https://danielstern.github.io/ngAudio/audio/button-4.mp3'), title: "Utoooooo" },
+                { audio: ngAudio.load('https://danielstern.github.io/ngAudio/audio/button-4.mp3'), title: "IIiIiiiiiiiii" },
+                { audio: ngAudio.load('https://danielstern.github.io/ngAudio/audio/button-4.mp3'), title: "Le chupo el vaso a la carrera" },
+            ];
+        });
+    </script>
+</body>
+</html>
