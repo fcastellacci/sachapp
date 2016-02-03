@@ -18,7 +18,7 @@
                 md-gutter="12px" md-gutter-gt-sm="8px">
             <md-grid-tile ng-repeat="sound in ctr.sounds"
                           md-colspan-sm="1">
-                <md-button class="md-accent md-raised" ng-click="sound.audio.play()">Play</md-button>
+                <md-button class="md-accent md-raised" ng-click="sound.audio.play()" ng-disabled="!sound.audio.paused">Play</md-button>
                 <md-grid-tile-footer>
                     <h3>{{sound.title}}</h3>
                 </md-grid-tile-footer>
@@ -43,21 +43,25 @@
             self.sounds = [
                 { audio: ngAudio.load('audios/sape.aac'), title: "Sape!" },
                 { audio: ngAudio.load('audios/alto-yao.aac'), title: "Alto Yao" },
-                // { audio: ngAudio.load('audios/.aac'), title: "Williieee" },
+                { audio: ngAudio.load('audios/willi.aac'), title: "Willi" },
                 { audio: ngAudio.load('audios/sapenstein.aac'), title: "Sapenstein" },
                 // { audio: ngAudio.load('audios/.aac'), title: "Sapenhaus" },
                 { audio: ngAudio.load('audios/dale-para-adelante.aac'), title: "Vos dale para adelante" },
                 { audio: ngAudio.load('audios/fumate-un-careta.aac'), title: "Fumate un careta" },
                 // { audio: ngAudio.load('audios/.aac'), title: "Miralo a Bayardito" },
-                // { audio: ngAudio.load('audios/.aac'), title: "Con mi pingo se ahoga" },
+                { audio: ngAudio.load('audios/seip.aac'), title: "Seip" },
+                { audio: ngAudio.load('audios/tu-novia-puta.mp4'), title: "Tu novia puta" },
                 { audio: ngAudio.load('audios/te-la-vas-a-tener-que-tragar.aac'), title: "Te la vas a tener que tragar" },
+                { audio: ngAudio.load('audios/te-amo-y-te-extrano.m4a'), title: "Te amo y te extraño" },
                 // { audio: ngAudio.load('audios/.aac'), title: "Colate un dedo cabezona" },
                 // { audio: ngAudio.load('audios/.aac'), title: "Pero más bien, loquita" },
                 // { audio: ngAudio.load('audios/.aac'), title: "Paga John" },
                 // { audio: ngAudio.load('audios/.aac'), title: "De la gorra" },
                 { audio: ngAudio.load('audios/ponelo-aca.aac'), title: "Ponelo acááááá" },
-                // { audio: ngAudio.load('audios/.aac'), title: "Utoooooo" },
-                // { audio: ngAudio.load('audios/.aac'), title: "IIiIiiiiiiiii" },
+                { audio: ngAudio.load('audios/el-peluca-sape.aac'), title: "El peluca sape" },
+                { audio: ngAudio.load('audios/la-paraste-de-pecho-colorado.aac'), title: "La paraste de pecho, colorado" },
+                { audio: ngAudio.load('audios/uto.aac'), title: "Utoooooo" },
+                { audio: ngAudio.load('audios/iii.aac'), title: "IIiIiiiiiiiii" },
                 // { audio: ngAudio.load('audios/.aac'), title: "Le chupo el vaso a la carrera" },
             ];
         });
