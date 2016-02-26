@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Silbot</title>
+    <title>Sachapp</title>
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
 </head>
-<body ng-app="silbot" ng-cloak>
+<body ng-app="sachapp" ng-cloak>
     <div layout="column" layout-fill ng-controller="MainController as ctr">
         <md-toolbar layout layout-align="center center">
-            <h1>Silbot</h1>
+            <h1>Sachapp</h1>
         </md-toolbar>
         <md-grid-list
                 md-cols-xs="2" md-cols-sm="3" md-cols-md="4" md-cols-gt-md="5"
@@ -32,7 +32,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
     <script src="//rawgit.com/danielstern/ngAudio/master/app/angular.audio.js"></script>
     <script type="text/javascript">
-        angular.module('silbot', ['ngMaterial', 'ngAudio'])
+        angular.module('sachapp', ['ngMaterial', 'ngAudio'])
         .config(function($mdThemingProvider){
             $mdThemingProvider.theme('default')
                 .primaryPalette('light-green')
@@ -41,7 +41,7 @@
         .controller('MainController', function ($http, $interval, ngAudio) {
             var self = this;
             self.sounds = [
-                { audio: ngAudio.load('audios/sape.aac'), title: "Sape!" },
+                { audio: ngAudio.load('audios/1-pase-facil.mp3'), title: "1 pase facil!" },
                 { audio: ngAudio.load('audios/alto-yao.aac'), title: "Alto Yao" },
                 { audio: ngAudio.load('audios/willi.aac'), title: "Willi" },
                 { audio: ngAudio.load('audios/sapenstein.aac'), title: "Sapenstein" },
